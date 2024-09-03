@@ -33,4 +33,7 @@ public class ForecastFragment extends Fragment {
         view.setBackgroundColor(0x2000FF00);
         return inflater.inflate(R.layout.fragment_forecast, container, false);
     }
+    // define LinearLayout with vertical orientation
+
+
 }
