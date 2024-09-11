@@ -12,5 +12,5 @@ Student Info
 
 * Name: *Trần Thành Nguyên*
 * ID: *22BI13343*
-* Group ID: *Your Group ID here*
-* Project Name: *Your Project Name here*
+* Group ID: *14*
+* Project Name: *chess.com stats*
