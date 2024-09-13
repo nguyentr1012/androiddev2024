@@ -1,25 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id = "@+id/container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    tools:context=".WeatherActivity">
-<fragment
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:id="@+id/weather_fragment"
-    android:name="vn.edu.usth.weather.WeatherFragment"/>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id = "@+id/container"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    android:paddingLeft="16dp"-->
+<!--    android:paddingRight="16dp"-->
+<!--    tools:context=".WeatherActivity">-->
 
-<fragment
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="2"
-    android:id ="@+id/forecast_fragment"
-    android:name="vn.edu.usth.weather.ForecastFragment" />
-</LinearLayout>
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="1dp"-->
+<!--        android:layout_marginTop="1dp"-->
+<!--        android:layout_marginEnd="1dp"-->
+<!--        android:layout_marginBottom="1dp"-->
+<!--        android:foregroundGravity="center_horizontal" >-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="360dp"-->
+<!--            android:layout_height="490dp"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:orientation="vertical" >-->
+<!--            <fragment-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/weather_fragment"-->
+<!--                android:name="vn.edu.usth.weather.WeatherFragment"/>-->
+
+<!--            <fragment-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id ="@+id/forecast_fragment"-->
+<!--                android:name="vn.edu.usth.weather.ForecastFragment" />-->
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+<!--</LinearLayout>-->

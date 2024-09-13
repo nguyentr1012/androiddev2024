@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:id="@+id/tab1" android:title="tab1" android:icon="@drawable/sun" />
+        <item android:id="@+id/tab2" android:title="tab2" android:icon="@drawable/cloud" />
+        <item android:id="@+id/tab3" android:title="tab3" android:icon="@drawable/thunderstorm" />
+        <item android:id="@+id/tab4" android:title="tab4" android:icon="@drawable/rain" />
+
+</menu>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeatherandForecastFragment"
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="vn.edu.usth.weather.WeatherFragment"
+        tools:layout="@layout/fragment_weather"
+        android:id="@+id/weather_fragment">
+    </fragment>
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/forecast"
+        android:name="vn.edu.usth.weather.ForecastFragment"
+        tools:layout="@layout/fragment_forecast">
+    </fragment>
+
+</LinearLayout>
