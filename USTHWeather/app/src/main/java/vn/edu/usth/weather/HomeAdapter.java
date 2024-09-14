@@ -1,41 +1,22 @@
 package vn.edu.usth.weather;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 
-public class HomeAdapter extends FragmentPagerAdapter {
-    private final int PAGE_COUNT = 3;
-    private String titles[] = new String[] { "Hanoi", "Paris", "Toulouse" };
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
-    public HomeAdapter(FragmentManager fm) {
-        super(fm);
+public class HomeAdapter extends FragmentStatePagerAdapter {
+
+    public HomeAdapter( FragmentManager fm, int behavior) {
+        super(fm, behavior);
     }
 
     @Override
-    // Number of pages for a ViewPager
+    public Fragment getItem(int position) {
+            return WeatherandForecastFragment.newInstance("param1", "param2");
+    }
+    @Override
     public int getCount() {
-        return PAGE_COUNT;
-    }
-
-    @Override
-    // Return title for a page
-    public CharSequence getPageTitle(int page) {
-        return titles[page];
-    }
-
-    @Override
-    public Fragment getItem(int page) {
-        switch (page) {
-            case 0:
-                return new WeatherFragment();
-            case 1:
-                return new ForecastFragment();
-            case 2:
-                return new WeatherandForecastFragment();
-            default:
-                return null;
-        }
+        return 3; // Number of pages
     }
 }

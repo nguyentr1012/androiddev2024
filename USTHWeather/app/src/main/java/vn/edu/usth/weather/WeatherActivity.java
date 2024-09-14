@@ -1,46 +1,58 @@
 package vn.edu.usth.weather;
 
-import android.nfc.Tag;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import com.google.android.material.tabs.TabLayout;
 import android.util.Log;
+
 public class WeatherActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        Log.i("created", "created called");
-        ForecastFragment firstFragment = new ForecastFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.container, firstFragment).commit();
+
+        ViewPager viewPager = findViewById(R.id.viewPager);
+        HomeAdapter adapter = new HomeAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPager.setAdapter(adapter);
+
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(viewPager);
+
+        // Optionally, set tab titles
+        tabLayout.getTabAt(0).setText("Viet Nam");
+        tabLayout.getTabAt(1).setText("France");
+        tabLayout.getTabAt(2).setText("India");
     }
 
     @Override
-    public void onStart() {
+    protected void onStart() {
         super.onStart();
         Log.i("start", "onStart called");
     }
 
     @Override
-    public void onResume(){
+    protected void onResume() {
         super.onResume();
         Log.i("resume", "onResume called");
     }
 
     @Override
-    public void onPause(){
+    protected void onPause() {
         super.onPause();
         Log.i("pause", "onPause called");
     }
 
     @Override
-    public void onStop(){
+    protected void onStop() {
         super.onStop();
         Log.i("stop", "onStop called");
     }
 
     @Override
-    public void onDestroy(){
+    protected void onDestroy() {
         super.onDestroy();
         Log.i("destroy", "onDestroy called");
     }

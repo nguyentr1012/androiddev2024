@@ -1,7 +1,7 @@
 package vn.edu.usth.weather;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +35,7 @@ public class WeatherandForecastFragment extends Fragment {
      * @return A new instance of fragment WeatherandForecastFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static WeatherandForecastFragment newInstance(String param1, String param2) {
+    public static androidx.fragment.app.Fragment newInstance(String param1, String param2) {
         WeatherandForecastFragment fragment = new WeatherandForecastFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
