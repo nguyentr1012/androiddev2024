@@ -22,9 +22,9 @@ public class WeatherActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         // Optionally, set tab titles
-        tabLayout.getTabAt(0).setText("Viet Nam");
-        tabLayout.getTabAt(1).setText("France");
-        tabLayout.getTabAt(2).setText("India");
+        tabLayout.getTabAt(0).setText("Hanoi,VietNam");
+        tabLayout.getTabAt(1).setText("Paris,France");
+        tabLayout.getTabAt(2).setText("Toulouse,France");
     }
 
     @Override

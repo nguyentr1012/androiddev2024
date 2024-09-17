@@ -1,5 +1,26 @@
 <resources>
-    <string name="app_name">USTH Weather</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name" translatable="false">USTH Weather</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="weather_type_1" translatable="false">Partly Cloudly</string>
+    <string name="weather_type_2" translatable="false">Showers</string>
+    <string name="weather_type_3" translatable="false">Scattered Thunderstorms</string>
+    <string name="weather_type_4" translatable="false">Rain</string>
+    <string name="frag_temp" translatable="false">12C\n Cloudy</string>
+    <string name="frag_text">Paris</string>
+    <string name="day_1">Mon</string>
+    <string name="day_2">Tue</string>
+    <string name="day_3">Wed</string>
+    <string name="day_4">Thu</string>
+    <string name="day_5">Fri</string>
+    <string name="day_6">Sat</string>
+    <string name="day_7">Sun</string>
+    <string name="temp_1" translatable="false">24C - 31C </string>
+    <string name="temp_2" translatable="false">24C - 30C </string>
+    <string name="temp_3" translatable="false">22C - 23C </string>
+    <string name="temp_4" translatable="false">22C - 27C </string>
+    <string name="temp_5" translatable="false">22C - 30C </string>
+    <string name="temp_6" translatable="false">22C - 30C </string>
+    <string name="temp_7" translatable="false">25C - 28C </string>
+    <string name="temp_8" translatable="false">24C - 27C </string>
+    <string name="temp_9" translatable="false">23C - 27C </string>
 </resources>

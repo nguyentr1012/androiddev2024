@@ -4,23 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@android:color/holo_green_light"
-    android:padding="10dp">
+    android:background="@android:color/white"
+    android:padding="@dimen/fragment_padding">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:text="12C\nCloudy"
-        android:textSize="20dp"/>
+        android:text="@string/frag_temp"
+        android:textSize="@dimen/text_size"/>
    <ImageView
        android:layout_width="wrap_content"
-       android:layout_height="100dp"
+       android:layout_height="@dimen/image_height"
        android:src="@drawable/cloud"/>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="Paris"
-        android:textSize="20dp"
+        android:layout_height="@dimen/image_height"
+        android:text="@string/frag_text"
+        android:textSize="@dimen/text_size"
         android:gravity="end" />
-
 </RelativeLayout>

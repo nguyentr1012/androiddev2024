@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="icon_width">50dp</dimen>
+    <dimen name="icon_height"> 50dp</dimen>
+    <dimen name="icon_marleft">20dp</dimen>
+    <dimen name="icon_marright">30dp</dimen>
+    <dimen name="text_padding">10dp</dimen>
+    <dimen name="row_padding">20dp</dimen>
+    <dimen name="image_height">100dp</dimen>
+    <dimen name="text_size">20dp</dimen>
+    <dimen name="fragment_padding">10dp</dimen>
+</resources>

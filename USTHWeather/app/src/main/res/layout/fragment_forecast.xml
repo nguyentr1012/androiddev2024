@@ -33,13 +33,12 @@
     android:layout_height="match_parent"
     tools:context=".ForecastFragment"
     android:id="@+id/forecast"
-    android:orientation="vertical"
-    android:layout_marginTop="10dp">
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/time"
         android:layout_width="match_parent"
-        android:layout_height="686dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
@@ -51,28 +50,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="20dp">
+            android:paddingBottom="@dimen/row_padding">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="Mon"></TextView>
+                android:padding="@dimen/text_padding"
+                android:text="@string/day_1"> </TextView>
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginLeft="@dimen/icon_marleft"
+                android:layout_marginRight="@dimen/icon_marright"
                 android:src="@drawable/cloud"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="Partly Cloudy\n24C - 31C"></TextView>
+                android:text="@string/temp_1"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -80,28 +78,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="20dp">
+            android:paddingBottom="@dimen/row_padding">
 
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="Tue"></TextView>
+                android:padding="@dimen/text_padding"
+                android:text="@string/day_2"></TextView>
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginLeft="@dimen/icon_marleft"
+                android:layout_marginRight="@dimen/icon_marright"
                 android:src="@drawable/showers"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="Shower\n24C - 30C"></TextView>
+                android:text="@string/temp_2"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -109,28 +106,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="20dp">
+            android:paddingBottom="@dimen/row_padding">
 
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:padding="@dimen/text_padding"
                 android:text="Wed"></TextView>
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginLeft="@dimen/icon_marleft"
+                android:layout_marginRight="@dimen/icon_marright"
                 android:src="@drawable/rain"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="Rain\n22C - 23C"></TextView>
+                android:text="@string/temp_3"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -141,25 +137,24 @@
             android:paddingBottom="20dp">
 
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:padding="@dimen/text_padding"
                 android:text="Thu"></TextView>
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginLeft="@dimen/icon_marleft"
+                android:layout_marginRight="@dimen/icon_marright"
                 android:src="@drawable/scattered_thunderstorms"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="Scattered thunderstorms\n22C - 27C"></TextView>
+                android:text="@string/temp_4"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -170,25 +165,24 @@
             android:paddingBottom="20dp">
 
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:padding="@dimen/text_padding"
                 android:text="Fri"></TextView>
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginLeft="@dimen/icon_marleft"
+                android:layout_marginRight="@dimen/icon_marright"
                 android:src="@drawable/cloud"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="Partly Cloundy\n22C - 30C"></TextView>
+                android:text="@string/temp_5"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -199,25 +193,24 @@
             android:paddingBottom="20dp">
 
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:padding="@dimen/text_padding"
                 android:text="Sat"></TextView>
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginLeft="@dimen/icon_marleft"
+                android:layout_marginRight="@dimen/icon_marright"
                 android:src="@drawable/cloud"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="Partly Cloundy\n24C - 31C"></TextView>
+                android:text="@string/temp_6"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -228,25 +221,24 @@
             android:paddingBottom="20dp">
 
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:padding="@dimen/text_padding"
                 android:text="Sun"></TextView>
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginLeft="@dimen/icon_marleft"
+                android:layout_marginRight="@dimen/icon_marright"
                 android:src="@drawable/thunderstorm"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="Thunderstorm\n25C - 28C"></TextView>
+                android:text="@string/temp_7"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -257,25 +249,24 @@
             android:paddingBottom="20dp">
 
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:padding="@dimen/text_padding"
                 android:text="Mon"></TextView>
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginLeft="@dimen/icon_marleft"
+                android:layout_marginRight="@dimen/icon_marright"
                 android:src="@drawable/scattered_thunderstorms"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="Scattered thunderstorms\n24C - 27C"></TextView>
+                android:text="@string/temp_8"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -286,54 +277,52 @@
             android:paddingBottom="20dp">
 
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:padding="@dimen/text_padding"
                 android:text="Tue"></TextView>
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginLeft="@dimen/icon_marleft"
+                android:layout_marginRight="@dimen/icon_marright"
                 android:src="@drawable/showers"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="Showers\n23C - 27C"></TextView>
+                android:text="@string/temp_9"></TextView>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/hang10"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="62dp"
             android:orientation="horizontal"
             android:paddingBottom="20dp">
 
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:padding="@dimen/text_padding"
                 android:text="Wed"></TextView>
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginLeft="@dimen/icon_marleft"
+                android:layout_marginRight="@dimen/icon_marright"
                 android:src="@drawable/scattered_thunderstorms"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="Scattered Thunderstorms\n23C - 27C"></TextView>
+                android:text="@string/temp_9"></TextView>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

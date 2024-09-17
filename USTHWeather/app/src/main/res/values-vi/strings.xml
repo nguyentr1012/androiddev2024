@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">USTH Thời tiết</string>
+    <string name="day_1">Thứ 2</string>
+    <string name="day_2">Thứ 3</string>
+    <string name="day_3">Thứ 4</string>
+    <string name="day_4">Thứ 5</string>
+    <string name="day_5">Thứ 6</string>
+    <string name="day_6">Thứ 7</string>
+    <string name="day_7">CN</string>
+    <string name="frag_text">Hà Nội</string>
+</resources>
