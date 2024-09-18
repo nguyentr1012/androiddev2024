@@ -6,14 +6,19 @@
     android:orientation="horizontal"
     android:background="@android:color/white"
     android:padding="@dimen/fragment_padding">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/frame_height"
+        android:background="@drawable/frame"
+        android:padding="40dp">
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/image_height"
         android:text="@string/frag_temp"
         android:textSize="@dimen/text_size"/>
    <ImageView
        android:layout_width="wrap_content"
-       android:layout_height="@dimen/image_height"
+       android:layout_height="match_parent"
        android:src="@drawable/cloud"/>
 
     <TextView
@@ -22,4 +27,5 @@
         android:text="@string/frag_text"
         android:textSize="@dimen/text_size"
         android:gravity="end" />
+    </FrameLayout>
 </RelativeLayout>
