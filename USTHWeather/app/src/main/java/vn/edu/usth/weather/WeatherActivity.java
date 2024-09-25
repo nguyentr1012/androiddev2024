@@ -1,23 +1,80 @@
 package vn.edu.usth.weather;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.content.pm.PackageManager;
-
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
-import android.util.Log;
 
+import android.preference.PreferenceActivity;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 import android.media.MediaPlayer;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+
 public class WeatherActivity extends AppCompatActivity {
-    //extract and play music part
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_weather);
+
+        // Initialize toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        // Initialize ViewPager and TabLayout
+        ViewPager viewPager = findViewById(R.id.viewPager);
+        HomeAdapter adapter = new HomeAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPager.setAdapter(adapter);
+
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(viewPager);
+
+        //  set tab titles
+        tabLayout.getTabAt(0).setText("Hanoi, Vietnam");
+        tabLayout.getTabAt(1).setText("Paris, France");
+        tabLayout.getTabAt(2).setText("Toulouse, France");
+
+        // Request permissions and play music
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+        } else {
+            extractAndPlayMusic();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_navigation, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int toolid = item.getItemId();
+        if (toolid == R.id.refresh) {
+            Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (toolid == R.id.setting) {
+            startActivity(new Intent(this, PrefActivity.class));
+            return true;
+        }
+        return false;
+    }
+
     private void extractAndPlayMusic() {
         try {
             InputStream inputStream = getResources().openRawResource(R.raw.wii_sound);
@@ -25,42 +82,23 @@ public class WeatherActivity extends AppCompatActivity {
             OutputStream outputStream = new FileOutputStream(musicFile);
             byte[] buffer = new byte[1024];
             int length;
-            while ((length = inputStream.read(buffer)) > 0){
+            while ((length = inputStream.read(buffer)) > 0) {
                 outputStream.write(buffer, 0, length);
             }
             outputStream.flush();
             outputStream.close();
             inputStream.close();
+
             // Play
             MediaPlayer mediaPlayer = new MediaPlayer();
             mediaPlayer.setDataSource(musicFile.getPath());
             mediaPlayer.prepare();
             mediaPlayer.start();
-        } catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-//viewpager part
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weather);
 
-        ViewPager viewPager = findViewById(R.id.viewPager);
-        HomeAdapter adapter = new HomeAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        viewPager.setAdapter(adapter);
-        extractAndPlayMusic();
-        TabLayout tabLayout = findViewById(R.id.tabLayout);
-        tabLayout.setupWithViewPager(viewPager);
-
-        // Optionally, set tab titles
-        tabLayout.getTabAt(0).setText("Hanoi,VietNam");
-        tabLayout.getTabAt(1).setText("Paris,France");
-        tabLayout.getTabAt(2).setText("Toulouse,France");
-    }
-
-
-    //log part
     @Override
     protected void onStart() {
         super.onStart();
@@ -90,5 +128,4 @@ public class WeatherActivity extends AppCompatActivity {
         super.onDestroy();
         Log.i("destroy", "onDestroy called");
     }
-
 }
