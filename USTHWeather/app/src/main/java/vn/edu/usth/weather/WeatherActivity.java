@@ -66,7 +66,8 @@ public class WeatherActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int toolid = item.getItemId();
         if (toolid == R.id.refresh) {
-            Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
+            refresh_threadsim();
+//            Toast.makeText(this, "Refresh...", Toast.LENGTH_SHORT).show();
             return true;
         } else if (toolid == R.id.setting) {
             startActivity(new Intent(this, PrefActivity.class));
@@ -75,6 +76,28 @@ public class WeatherActivity extends AppCompatActivity {
         return false;
     }
 
+    //thread for refreshing
+    private void refresh_threadsim() {
+        Toast.makeText(this, "Refreshing...", Toast.LENGTH_SHORT).show();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(2000);
+                    runOnUiThread((new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(WeatherActivity.this, "Refreshed", Toast.LENGTH_SHORT).show();
+                        }
+                    }));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    //playing music
     private void extractAndPlayMusic() {
         try {
             InputStream inputStream = getResources().openRawResource(R.raw.wii_sound);
