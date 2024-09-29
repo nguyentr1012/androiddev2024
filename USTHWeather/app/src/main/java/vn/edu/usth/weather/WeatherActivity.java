@@ -23,6 +23,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import android.os.AsyncTask;
 public class WeatherActivity extends AppCompatActivity {
 
     @Override
@@ -66,8 +67,9 @@ public class WeatherActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int toolid = item.getItemId();
         if (toolid == R.id.refresh) {
-            refresh_threadsim();
+//            refresh_threadsim();
 //            Toast.makeText(this, "Refresh...", Toast.LENGTH_SHORT).show();
+            new refresh_async().execute();
             return true;
         } else if (toolid == R.id.setting) {
             startActivity(new Intent(this, PrefActivity.class));
@@ -76,25 +78,51 @@ public class WeatherActivity extends AppCompatActivity {
         return false;
     }
 
-    //thread for refreshing
-    private void refresh_threadsim() {
-        Toast.makeText(this, "Refreshing...", Toast.LENGTH_SHORT).show();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(2000);
-                    runOnUiThread((new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(WeatherActivity.this, "Refreshed", Toast.LENGTH_SHORT).show();
-                        }
-                    }));
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+    //thread for refreshing(prac13)
+//    private void refresh_threadsim() {
+//        Toast.makeText(this, "Refreshing...", Toast.LENGTH_SHORT).show();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    Thread.sleep(2000);
+//                    runOnUiThread((new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            Toast.makeText(WeatherActivity.this, "Refreshed", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }));
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }).start();
+//    }
+
+
+
+    //asynctask(prac14)
+    private class refresh_async extends AsyncTask<Void,Void,Void>{
+        @Override
+        //for display toast before starting the background operation
+        protected void onPreExecute() {
+            super.onPreExecute();
+            Toast.makeText(WeatherActivity.this, "Refreshing...", Toast.LENGTH_SHORT).show();
+        }
+        //for simulate 1 network delay
+        protected Void doInBackground(Void... voids) {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        }).start();
+            return null;
+        }
+        //for display toast after background operation
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            Toast.makeText(WeatherActivity.this, "Refreshed", Toast.LENGTH_SHORT).show();
+        }
     }
 
     //playing music
