@@ -11,6 +11,8 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.preference.PreferenceActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -48,6 +50,8 @@ public class WeatherActivity extends AppCompatActivity {
         tabLayout.getTabAt(1).setText("Paris, France");
         tabLayout.getTabAt(2).setText("Toulouse, France");
 
+
+
         // Request permissions and play music
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -56,6 +60,7 @@ public class WeatherActivity extends AppCompatActivity {
             extractAndPlayMusic();
         }
     }
+//practical 12 appbar
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -81,6 +86,7 @@ public class WeatherActivity extends AppCompatActivity {
     //thread for refreshing(prac13)
 //    private void refresh_threadsim() {
 //        Toast.makeText(this, "Refreshing...", Toast.LENGTH_SHORT).show();
+//    final handler = new Handler(Looper.getMainLooper());
 //        new Thread(new Runnable() {
 //            @Override
 //            public void run() {
